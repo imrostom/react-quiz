@@ -9,7 +9,7 @@ function Signup() {
     return (
         <>
             <h1>Create an account</h1>
-            <div class="column">
+            <div className="column">
                 <Illustration />
 
                 <Form className={`${classes.signup} form`} >

@@ -1,7 +1,7 @@
 import Analysis from '../components/Analysis';
 import Summary from '../components/Summary';
 
-function Signup() {
+function Result() {
     return (
         <>
             <Summary />
@@ -10,4 +10,4 @@ function Signup() {
     );
 }
 
-export default Signup;
+export default Result;
