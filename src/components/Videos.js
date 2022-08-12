@@ -1,17 +1,46 @@
+import { Link } from 'react-router-dom';
 import classes from '../styles/Videos.module.css';
 import Video from './Video';
 
 function Videos() {
     return (
         <div className={classes.videos}>
-            <Video></Video>
-            <Video></Video>
-            <Video></Video>
-            <Video></Video>
-            <Video></Video>
-            <Video></Video>
-            <Video></Video>
-            <Video></Video>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
+            <Link to="/quiz">
+                <Video></Video>
+            </Link>
         </div>
     );
 }

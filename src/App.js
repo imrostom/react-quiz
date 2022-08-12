@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
+import PrivateOutlet from './components/PrivateOutlet';
+import PublicOutlet from './components/PublicOutlet';
+import { AuthProvider } from './contexts/AuthContext';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Quiz from './pages/Quiz';
@@ -12,15 +15,26 @@ import './styles/App.css';
 function App() {
     return (
         <Router>
-            <Layout>
-                <Routes>
-                    <Route exact path='/' element={<Home />} />
-                    <Route exact path='/signup' element={<Signup />} />
-                    <Route exact path='/login' element={<Login />} />
-                    <Route exact path='/quiz' element={<Quiz />} />
-                    <Route exact path='/result' element={<Result />} />
-                </Routes>
-            </Layout>
+            <AuthProvider>
+                <Layout>
+                    <Routes>
+                        <Route path='/' element={<Home />} />
+
+                        <Route path="/*" element={<PublicOutlet />}>
+                            <Route path='signup' element={<Signup />} />
+                            <Route path='login' element={<Login />} />
+                        </Route>
+
+                        {/* <Route path='/signup' element={<Signup />} /> */}
+                        {/* <Route path='/login' element={<Login />} /> */}
+
+                        <Route path="/*" element={<PrivateOutlet />}>
+                            <Route path='quiz' element={<Quiz />} />
+                            <Route path='result' element={<Result />} />
+                        </Route>
+                    </Routes>
+                </Layout>
+            </AuthProvider>
         </Router>
     );
 }
